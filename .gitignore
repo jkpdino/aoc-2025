@@ -1,0 +1,26 @@
+# Environment and secrets
+.env
+
+# Puzzle inputs (personal data)
+day*/input.txt
+day*/test-input.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
