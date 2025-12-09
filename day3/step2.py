@@ -10,6 +10,28 @@ def read_input(filename):
         lines = f.read().strip().split('\n')
     return lines
 
+def maximum_power(number: str) -> int:
+    batteries_to_turn_on = 12
+
+    power = 0
+    index = 0
+
+    for battery_index in range(batteries_to_turn_on):
+        max_digit = 0
+        max_digit_index = 0
+
+        for test_index in range(index, len(number) - (batteries_to_turn_on - battery_index) + 1):
+            digit = int(number[test_index])
+            if digit > max_digit:
+                max_digit = digit
+                max_digit_index = test_index
+
+        power = 10 * power + max_digit
+        index = max_digit_index + 1
+
+    return power
+
+
 def solve(data):
     """
     Solve the puzzle.
@@ -20,8 +42,10 @@ def solve(data):
     Returns:
         Solution answer
     """
-    # TODO: Implement solution
-    pass
+    acc = 0
+    for line in data:
+        acc += maximum_power(line)
+    return acc
 
 if __name__ == "__main__":
     import sys

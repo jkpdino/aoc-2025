@@ -10,6 +10,31 @@ def read_input(filename):
         lines = f.read().strip().split('\n')
     return lines
 
+def maximum_power(number: str) -> int:
+    # find the largest digit, earliest, and then find the largest digit after that.
+
+    max_digit = 0
+    max_digit_index = 0
+
+    for i in range(len(number) - 1):
+        digit = int(number[i])
+        if digit > max_digit:
+            max_digit = digit
+            max_digit_index = i
+
+    # then find the largest digit after that
+    max_digit_after = 0
+    max_digit_after_index = 0
+    
+    for i in range(max_digit_index + 1, len(number)):
+        digit = int(number[i])
+        if digit > max_digit_after:
+            max_digit_after = digit
+            max_digit_after_index = i
+
+    return max_digit * 10 + max_digit_after
+
+
 def solve(data):
     """
     Solve the puzzle.
@@ -20,8 +45,10 @@ def solve(data):
     Returns:
         Solution answer
     """
-    # TODO: Implement solution
-    pass
+    acc = 0
+    for line in data:
+        acc += maximum_power(line)
+    return acc
 
 if __name__ == "__main__":
     import sys

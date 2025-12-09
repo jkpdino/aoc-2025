@@ -46,6 +46,7 @@ cp .env.example .env
 ```
 
 Your `.env` file should look like:
+
 ```
 AOC_SESSION=53616c7465645f5f...your_actual_cookie_here
 ```
@@ -67,6 +68,7 @@ Download problem descriptions and input for a specific day:
 ```
 
 This creates:
+
 ```
 day1/
 ├── step1.py          # Part 1 solution template
@@ -110,6 +112,7 @@ Submit your answer to Advent of Code:
 ```
 
 The tool will:
+
 1. Run your solution to get the answer
 2. Show you the answer and ask for confirmation
 3. Submit it to Advent of Code
@@ -191,20 +194,24 @@ if __name__ == "__main__":
 ## Troubleshooting
 
 ### "AOC_SESSION not found"
+
 - Make sure you copied `.env.example` to `.env`
 - Make sure you added your session cookie to `.env`
 
 ### "Day X input not yet available"
+
 - The puzzle might not be released yet
 - Check that today's date is in December 1-12, 2025
 - The harness will create skeleton files you can use
 
 ### "Invalid session cookie"
+
 - Your session cookie might have expired
 - Log in to adventofcode.com again and get a new cookie
 - Update your `.env` file
 
 ### Rate Limiting
+
 - AoC has rate limits on submissions
 - Wait a few minutes before submitting again
 - The tool enforces a 3-second minimum between submissions
@@ -240,6 +247,6 @@ MIT License - feel free to modify and use as you like!
 
 ## Credits
 
-Built for Advent of Code 2025 by Claude Code.
+Built for Advent of Code 2025 by John Palladino
 
 Happy coding! 🎄⭐
